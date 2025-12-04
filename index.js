@@ -4,6 +4,7 @@ import cors from "cors";
 import dbConnect from "./database/dbConfig.js";
 import authrouter from "./Router/authRouter.js"
 import serviceRouter from "./Router/serviceRouter.js"
+import bookingroute from "./Router/bookingRouter.js"
 
 dotenv.config();
 
@@ -22,6 +23,8 @@ app.get("/",(req,res)=>{
 app.use("/api/auth",authrouter)
 
 app.use("/api/service",serviceRouter)
+
+app.use("/api/bookingservice",bookingroute)
 
 app.listen(port,()=>{
     console.log("server started");
